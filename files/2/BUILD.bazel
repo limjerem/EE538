@@ -1,0 +1,16 @@
+cc_library(
+    name = "q_lib",
+    srcs = ["q.cc"],
+    hdrs = ["q.h"],
+    strip_include_prefix = ".",
+    visibility = ["//visibility:public"],
+)
+
+cc_test(
+    name = "student_test",
+    srcs = ["student_test.cc"],
+    deps = [
+        ":q_lib",
+        "@gtest//:gtest_main",
+    ],
+)
